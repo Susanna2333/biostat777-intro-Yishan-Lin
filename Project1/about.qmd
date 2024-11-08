@@ -1,0 +1,9 @@
+---
+title: "About"
+---
+
+# About me
+
+I am a current Master of Health Science candidate of epidemiology in Johns Hopkins Bloomberg School of Public Health. During my undergraduate and graduate study, I have been trained in skills of Statistics and Epidemiology, and specifically concentrated on Clinical and Cardiovascular Epidemiology. I developed strong analytical skills of managing and analyzing data using R, Stata and SAS, and I am proficient in longitudinal and survival analysis for clinical trials and large longitudinal data. In addition, I am also pursuing a certificate in Public Health Economics.
+
+![](WechatIMG16.jpg){fig-align="center"}

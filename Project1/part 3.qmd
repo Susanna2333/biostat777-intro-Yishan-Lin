@@ -1,0 +1,69 @@
+---
+title: "Part 3"
+---
+
+1.  Use [`wget`](https://www.gnu.org/software/wget) to download the `students.csv` file locally from [here](https://github.com/stephaniehicks/jhustatprogramming2024/blob/main/projects/01-project/students.csv).
+
+```{bash echo=TRUE}
+    wget https://raw.githubusercontent.com/stephaniehicks/jhustatprogramming2024/refs/heads/main/projects/01-project/students.csv
+```
+
+2.  Display the contents of the `students.csv` file using the `cat` command.
+
+```{bash echo=TRUE}
+    cat students.csv
+```
+
+3.  Display only the first 5 lines of the file using `head` to show the first few lines.
+
+```{bash echo=TRUE}
+    head -n 5 students.csv
+```
+
+4.  Display only the last 3 lines of the file using `tail` to show the last few lines.
+
+```{bash echo=TRUE}
+    tail -n 3 students.csv
+```
+
+5.  Count the number of lines in the file using the `wc` command to count the lines.
+
+```{bash echo=TRUE}
+    wc students.csv
+```
+
+6.  Find all students who are taking “Math” as a subject using `grep` to filter lines with the subject “Math”.
+
+```{bash echo=TRUE}
+    grep -w "Math" students.csv
+```
+
+7.  Find all female students using `grep` or `awk` to filter based on gender.
+
+```{bash echo=TRUE}
+    grep -w "F" students.csv
+```
+
+8.  Sort the file by the students’ ages in ascending order. Use `sort` to order by the “Age” column.
+
+```{bash echo=TRUE}
+    (head -n 1 && tail -n +2 | sort -t',' -k3,3n) < students.csv
+```
+
+9.  Find the unique subjects listed in the file. Use `cut`, `sort`, and `uniq` to extract unique subjects.
+
+```{bash echo=TRUE}
+    tail -n +2 students.csv | cut -d',' -f6 | sort | uniq
+```
+
+10. Calculate the average grade of the students. Use `awk` to sum the grades and divide by the number of students.
+
+```{bash echo=TRUE}
+    awk -F"," 'NR > 1 {sum += $3; count++} END {if (count > 0) print  "Average Grade: ", sum/count}' students.csv
+```
+
+11. Replace all occurrences of “Math” with “Mathematics” in the file. Use `sed` to perform the replacement.
+
+```{bash echo=TRUE}
+   tail -n +2 students.csv | sed 's/Math/Mathematics/g' students.csv
+```

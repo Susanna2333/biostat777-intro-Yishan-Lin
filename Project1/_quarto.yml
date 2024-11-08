@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "Lin's World"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - Example analysis.qmd
+      - part 3.qmd
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+
+editor: visual
+
